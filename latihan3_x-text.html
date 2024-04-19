@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3 - x-text</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div x-data class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm">Halo, <span x-text="$store.mahasiswa.nama"></span></h1>
+    </div>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('mahasiswa', {
+                nama: 'Dimas Aryasatya',
+                umur: 21,
+                kelas: 'TIF 221 MC',
+            })
+        });
+    </script>
+</body>
+</html>

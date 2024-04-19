@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan2 - Global State</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+<div x-data>
+    <template x-for="teman in $store.mahasiswa.teman">
+        <li x-text="teman"></li>
+    </template>
+</div>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('mahasiswa', {
+                nama:'Dimas Aryasatya',
+                umur: 21,
+                teman: ['alan', 'yadi', 'ari']
+            })
+        })
+    </script>
+</body>
+</html>
+
